@@ -29,6 +29,8 @@ ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+import dj_database_url
+
 
 # Application definition
 
@@ -46,9 +48,10 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 
     'django.middleware.security.SecurityMiddleware',
+        'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
 
@@ -59,6 +62,7 @@ MIDDLEWARE = [
 ]
 ROOT_URLCONF = 'student_project.urls'
 CORS_ALLOW_ALL_ORIGINS = True
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 TEMPLATES = [
     {
