@@ -62,6 +62,7 @@ MIDDLEWARE = [
 ]
 ROOT_URLCONF = 'student_project.urls'
 CORS_ALLOW_ALL_ORIGINS = True
+import os
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 TEMPLATES = [
