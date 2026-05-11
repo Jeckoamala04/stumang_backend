@@ -98,13 +98,25 @@ WSGI_APPLICATION = 'student_project.wsgi.application'
 #     }
 # }
 
-# render use panne  for live
+# for railway deploy 
+
+
+import pymysql
+import dj_database_url
+
+pymysql.install_as_MySQLdb()
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(
+        'mysql://root:nMwLcWRJGFOjIxBuaeIigoCxSwlNvnps@viaduct.proxy.rlwy.net:26124/railway'
+    )
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 # pagignation 
 
 REST_FRAMEWORK = {
